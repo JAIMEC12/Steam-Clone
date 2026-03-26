@@ -11,32 +11,32 @@ namespace Steam.Web.Api.Controllers
     {
         private readonly IUserService _service = service;
 
-        [HttpPost]
+        [HttpPost] // Create a new user
         public IActionResult Create([FromBody] CreateUsersRequest model)
         {
             var rsp = _service.CreateUser(model);
             return Ok(rsp);
         }
 
-        [HttpGet]
+        [HttpGet] // Get all users
         public IActionResult GetAll()
         {
             return Ok(_service.GetAllUsers());
         }
 
-        [HttpGet("{id:guid}")]
+        [HttpGet("{id:guid}")] // Get a user by ID
         public IActionResult GetById(Guid id)
         {
             return Ok(_service.GetUserById(id));
         }
 
-        [HttpPut("{id:guid}")]
-        public IActionResult Update(Guid id, [FromBody] UpdateUserRequest model)
+        [HttpPut("{id:guid}")] // Update a user by ID
+        public IActionResult Update(Guid id, [FromBody] UpdateUserRequest request)
         {
-            return Ok(_service.UpdateUser(id, model));
+            return Ok(_service.UpdateUser(id, request));
         }
 
-        [HttpDelete("{id:guid}")]
+        [HttpDelete("{id:guid}")] // Delete a user by ID
         public IActionResult Delete(Guid id)
         {
             return Ok(_service.DeleteUser(id));
