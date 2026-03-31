@@ -1,5 +1,7 @@
 using SteamApplication.Interfaces.Servicie;
+using SteamApplication.Models.Dtos;
 using SteamApplication.Servicios;
+using SteamShared;
 
 ;
 
@@ -12,9 +14,14 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 // Inyección de dependencia
-builder.Services.AddSingleton<IUserService, UserService>();
-
+//builder.Services.AddSingleton<IUserService, UserService>();
+builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddSingleton<Cache<UserDto>>();
+builder.Services.AddSingleton<Cache<GameDto>>();
+
+//builder.Services.AddSqlServer<SteamContext>(builder.Configuration.GetConnectionString("Database"));
 
 var app = builder.Build();
 
