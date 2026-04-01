@@ -26,5 +26,15 @@ namespace SteamApplication.Helpers
                 Success = false
             };
         }
+
+        public static GenericResponse<T> Create<T>(T data, string message = "Solicitud realizada")
+        {
+            var response = new GenericResponse<T>
+            {
+                Data = data,
+                Message = message,
+            };
+            return response;
+        }
     }
 }

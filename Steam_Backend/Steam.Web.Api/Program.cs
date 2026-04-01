@@ -3,8 +3,6 @@ using SteamApplication.Models.Dtos;
 using SteamApplication.Servicios;
 using SteamShared.Cache;
 
-;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -28,6 +26,11 @@ builder.Services.AddSingleton<Cache<UserDto>>(); // El método AddSingleton regi
                                                  // Esta instancia se comparte entre todas las solicitudes y usuarios. Es útil para servicios
                                                  // que no mantienen estado específico de la solicitud y que pueden ser compartidos de
                                                  // manera segura.
+
+builder.Services.AddSingleton<Cache<UserDto>>();
+builder.Services.AddSingleton<Cache<GameDto>>();
+
+//builder.Services.AddSqlServer<SteamContext>(builder.Configuration.GetConnectionString("Database"));
 
 var app = builder.Build();
 

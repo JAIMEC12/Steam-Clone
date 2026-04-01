@@ -4,20 +4,7 @@
     {
         public static DateTime UtcNow()
         {
-
-
-
-
             return DateTimeOffset.UtcNow.DateTime;
-
-
-
-
         }
-
-
-
-
-
     }
 }
