@@ -19,7 +19,7 @@ namespace SteamApplication.Models.Request.Games
         public DateTime ReleaseDate { get; set; } = DateTime.UtcNow;
 
         [Required]
-        [Range(0.0, double.PositiveInfinity, ErrorMessage = ValidationConstants.NEGATIVE_VALUES)]
+        [Range(0.0, double.PositiveInfinity, ErrorMessage = ValidationConstants.INVALID_DATA)]
         public required decimal Price { get; set; }
 
     }

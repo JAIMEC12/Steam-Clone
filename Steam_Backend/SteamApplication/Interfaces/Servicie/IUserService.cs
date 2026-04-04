@@ -6,10 +6,10 @@ namespace SteamApplication.Interfaces.Servicie
 {
     public interface IUserService // Define la interfaz IUserService que contiene los métodos para gestionar usuarios
     {
-        GenericResponse<UserDto> CreateUser(CreateUsersRequest model);
-        GenericResponse<UserDto> UpdateUser(Guid id, UpdateUserRequest model);
-        bool DeleteUser(Guid id);
-        List<UserDto> GetAllUsers();
-        GenericResponse<UserDto> GetUserById(Guid id);
+        public Task<GenericResponse<UserDto>> CreateUser(CreateUsersRequest model);
+        public Task<GenericResponse<UserDto>> UpdateUser(Guid userId, UpdateUserRequest model);
+        public GenericResponse<List<UserDto>> GetUsers(FilterUserRequest model);
+        public Task<GenericResponse<UserDto>> GetUserById(Guid userId);
+        public Task<GenericResponse<bool>> DeleteUser(Guid userId);
     }
 }

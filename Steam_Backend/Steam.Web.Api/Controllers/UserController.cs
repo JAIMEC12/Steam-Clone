@@ -7,39 +7,42 @@ namespace Steam.Web.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController(IUserService service) : ControllerBase
+    public class UserController(IUserService userService) : ControllerBase
     {
-        private readonly IUserService _service = service;
 
         [HttpPost] // Create a new user
-        public IActionResult Create([FromBody] CreateUsersRequest model)
+        public async Task<IActionResult> Create([FromBody] CreateUsersRequest model)
         {
-            var rsp = _service.CreateUser(model);
+            var rsp = await userService.CreateUser(model);
             return Ok(rsp);
         }
 
         [HttpGet] // Get all users
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] FilterUserRequest model)
         {
-            return Ok(_service.GetAllUsers());
+            var rsp = userService.GetUsers(model);
+            return Ok(rsp);
         }
 
         [HttpGet("{id:guid}")] // Get a user by ID
-        public IActionResult GetById(Guid id)
+        public async Task<IActionResult> GetById(Guid userId)
         {
-            return Ok(_service.GetUserById(id));
+            var rsp = await userService.GetUserById(userId);
+            return Ok(rsp);
         }
 
         [HttpPut("{id:guid}")] // Update a user by ID
-        public IActionResult Update(Guid id, [FromBody] UpdateUserRequest request)
+        public async Task<IActionResult> Update(Guid userId, [FromBody] UpdateUserRequest request)
         {
-            return Ok(_service.UpdateUser(id, request));
+            var rsp = await userService.UpdateUser(userId, request);
+            return Ok(rsp);
         }
 
         [HttpDelete("{id:guid}")] // Delete a user by ID
-        public IActionResult Delete(Guid id)
+        public async Task<IActionResult> Delete(Guid userId)
         {
-            return Ok(_service.DeleteUser(id));
+            var rsp = await userService.DeleteUser(userId);
+            return Ok(rsp);
         }
     }
 }

@@ -16,12 +16,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Steam.Domain\Steam.Domain.csproj" />
+    <ProjectReference Include="..\Steam.Infrastructure\Steam.Infrastructure.csproj" />
     <ProjectReference Include="..\SteamApplication\SteamApplication.csproj" />
     <ProjectReference Include="..\SteamShared\SteamShared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>
