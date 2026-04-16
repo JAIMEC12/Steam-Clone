@@ -4,7 +4,7 @@ using SteamApplication.Models.Response;
 
 namespace SteamApplication.Interfaces.Servicie
 {
-    public interface IUserService
+    public interface IUserService // Define la interfaz IUserService que contiene los métodos para gestionar usuarios
     {
         GenericResponse<UserDto> CreateUser(CreateUsersRequest model);
         GenericResponse<UserDto> UpdateUser(Guid id, UpdateUserRequest model);
