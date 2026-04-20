@@ -1,9 +1,10 @@
+using Serilog;
 using Steam.Web.Api.Extensions;
 using Steam.Web.Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCore(builder.Configuration);
-
+builder.Host.UseSerilog();
 
 // Add services to the container.
 

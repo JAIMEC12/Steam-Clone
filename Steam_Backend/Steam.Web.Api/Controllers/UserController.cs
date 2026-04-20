@@ -10,9 +10,10 @@ namespace Steam.Web.Api.Controllers
     public class UserController(IUserService userService) : ControllerBase
     {
 
-        [HttpPost] // Create a new user
+        [HttpPost] // Create a new user 
         public async Task<IActionResult> Create([FromBody] CreateUsersRequest model)
         {
+
             var rsp = await userService.CreateUser(model);
             return Ok(rsp);
         }

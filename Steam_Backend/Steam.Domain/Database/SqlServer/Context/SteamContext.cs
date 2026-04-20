@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Steam.Domain.Database.SqlServer.Entities;
 
 namespace Steam.Domain.Database.SqlServer.Context;
