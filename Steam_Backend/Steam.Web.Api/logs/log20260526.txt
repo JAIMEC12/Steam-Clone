@@ -1,0 +1,688 @@
+2026-05-26 10:47:37.090 -05:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-05-26 10:47:37.752 -05:00 [DBG] No relationship from 'Friend' to 'User' has been configured by convention because there are multiple properties on one entity type - {'FriendNavigation', 'User'} that could be matched with the properties on the other entity type - {'FriendFriendNavigations', 'FriendUsers'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:47:37.840 -05:00 [DBG] No relationship from 'UserRole' to 'User' has been configured by convention because there are multiple properties on one entity type - {'AssignedByNavigation', 'User'} that could be matched with the properties on the other entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:47:37.848 -05:00 [DBG] No relationship from 'User' to 'Friend' has been configured by convention because there are multiple properties on one entity type - {'FriendFriendNavigations', 'FriendUsers'} that could be matched with the properties on the other entity type - {'FriendNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:47:37.851 -05:00 [DBG] No relationship from 'User' to 'UserRole' has been configured by convention because there are multiple properties on one entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'} that could be matched with the properties on the other entity type - {'AssignedByNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:47:38.118 -05:00 [DBG] No relationship from 'Friend' to 'User' has been configured by convention because there are multiple properties on one entity type - {'FriendNavigation', 'User'} that could be matched with the properties on the other entity type - {'FriendFriendNavigations', 'FriendUsers'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:47:38.124 -05:00 [DBG] No relationship from 'User' to 'Friend' has been configured by convention because there are multiple properties on one entity type - {'FriendFriendNavigations', 'FriendUsers'} that could be matched with the properties on the other entity type - {'FriendNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:47:38.128 -05:00 [DBG] No relationship from 'User' to 'UserRole' has been configured by convention because there are multiple properties on one entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'} that could be matched with the properties on the other entity type - {'AssignedByNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:47:38.138 -05:00 [DBG] No relationship from 'User' to 'UserRole' has been configured by convention because there are multiple properties on one entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'} that could be matched with the properties on the other entity type - {'AssignedByNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:47:38.213 -05:00 [DBG] No relationship from 'UserRole' to 'User' has been configured by convention because there are multiple properties on one entity type - {'AssignedByNavigation', 'User'} that could be matched with the properties on the other entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:47:38.218 -05:00 [DBG] No relationship from 'User' to 'UserRole' has been configured by convention because there are multiple properties on one entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'} that could be matched with the properties on the other entity type - {'AssignedByNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:47:38.264 -05:00 [DBG] The index {'UserId'} was not created on entity type 'Friend' as the properties are already covered by the index {'UserId', 'FriendId'}.
+2026-05-26 10:47:38.267 -05:00 [DBG] The index {'ReviewId'} was not created on entity type 'ReviewAnswer' as the properties are already covered by the index {'ReviewId', 'UserId'}.
+2026-05-26 10:47:38.270 -05:00 [DBG] The index {'RoleId'} was not created on entity type 'RolePermission' as the properties are already covered by the index {'RoleId', 'PermissionId'}.
+2026-05-26 10:47:38.273 -05:00 [DBG] The index {'UserId'} was not created on entity type 'UserRole' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-05-26 10:47:38.673 -05:00 [DBG] Entity Framework Core 9.0.14 initialized 'SteamContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.14' with options: EngineType=SqlServer 
+2026-05-26 10:47:38.779 -05:00 [DBG] Compiling query expression: 
+'DbSet<EmailTemplate>()'
+2026-05-26 10:47:39.175 -05:00 [DBG] Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<EmailTemplate>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: EmailTemplate.Body (string) Required, 0], [Property: EmailTemplate.CreatedAt (DateTime) Required ValueGenerated.OnAdd, 1], [Property: EmailTemplate.EmailTemplateId (int) Required ValueGenerated.OnAdd, 2], [Property: EmailTemplate.Name (string) Required MaxLength(100) ANSI, 3], [Property: EmailTemplate.Subject (string) Required MaxLength(255) ANSI, 4] }
+        SELECT e.Body, e.CreatedAt, e.EmailTemplateId, e.Name, e.Subject
+        FROM EmailTemplates AS e) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: EmailTemplate.Body (string) Required, 0], [Property: EmailTemplate.CreatedAt (DateTime) Required ValueGenerated.OnAdd, 1], [Property: EmailTemplate.EmailTemplateId (int) Required ValueGenerated.OnAdd, 2], [Property: EmailTemplate.Name (string) Required MaxLength(100) ANSI, 3], [Property: EmailTemplate.Subject (string) Required MaxLength(255) ANSI, 4] }
+        SELECT e.Body, e.CreatedAt, e.EmailTemplateId, e.Name, e.Subject
+        FROM EmailTemplates AS e, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        EmailTemplate entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            EmailTemplate instance1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(EmailTemplate);
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: EmailTemplate Keyless | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.EmailTemplate")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: EmailTemplate Keyless | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.EmailTemplate")]: 
+                        {
+                            return 
+                            {
+                                EmailTemplate instance;
+                                instance = new EmailTemplate();
+                                instance.<Body>k__BackingField = dataReader.GetString(0);
+                                instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(1);
+                                instance.<EmailTemplateId>k__BackingField = dataReader.GetInt32(2);
+                                instance.<Name>k__BackingField = dataReader.GetString(3);
+                                instance.<Subject>k__BackingField = dataReader.GetString(4);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: EmailTemplate Keyless | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.EmailTemplate")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(EmailTemplate)
+                }
+                ;
+                return instance1;
+            }return instance1;
+        };
+        return entity;
+    }, 
+    contextType: SteamDomain.Database.SqlServer.Context.SteamContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2026-05-26 10:47:39.221 -05:00 [DBG] Creating DbConnection.
+2026-05-26 10:47:39.253 -05:00 [DBG] Created DbConnection. (30ms).
+2026-05-26 10:47:39.262 -05:00 [DBG] Opening connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:47:54.776 -05:00 [ERR] An error occurred using the connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:47:54.830 -05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'SteamDomain.Database.SqlServer.Context.SteamContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+ ---> System.ComponentModel.Win32Exception (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:10061,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+ ---> System.ComponentModel.Win32Exception (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:10061,State:0,Class:20
+2026-05-26 10:48:11.819 -05:00 [DBG] 'SteamContext' disposed.
+2026-05-26 10:53:09.616 -05:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-05-26 10:53:10.099 -05:00 [DBG] No relationship from 'Friend' to 'User' has been configured by convention because there are multiple properties on one entity type - {'FriendNavigation', 'User'} that could be matched with the properties on the other entity type - {'FriendFriendNavigations', 'FriendUsers'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:53:10.169 -05:00 [DBG] No relationship from 'UserRole' to 'User' has been configured by convention because there are multiple properties on one entity type - {'AssignedByNavigation', 'User'} that could be matched with the properties on the other entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:53:10.175 -05:00 [DBG] No relationship from 'User' to 'Friend' has been configured by convention because there are multiple properties on one entity type - {'FriendFriendNavigations', 'FriendUsers'} that could be matched with the properties on the other entity type - {'FriendNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:53:10.180 -05:00 [DBG] No relationship from 'User' to 'UserRole' has been configured by convention because there are multiple properties on one entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'} that could be matched with the properties on the other entity type - {'AssignedByNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:53:10.359 -05:00 [DBG] No relationship from 'Friend' to 'User' has been configured by convention because there are multiple properties on one entity type - {'FriendNavigation', 'User'} that could be matched with the properties on the other entity type - {'FriendFriendNavigations', 'FriendUsers'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:53:10.364 -05:00 [DBG] No relationship from 'User' to 'Friend' has been configured by convention because there are multiple properties on one entity type - {'FriendFriendNavigations', 'FriendUsers'} that could be matched with the properties on the other entity type - {'FriendNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:53:10.367 -05:00 [DBG] No relationship from 'User' to 'UserRole' has been configured by convention because there are multiple properties on one entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'} that could be matched with the properties on the other entity type - {'AssignedByNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:53:10.378 -05:00 [DBG] No relationship from 'User' to 'UserRole' has been configured by convention because there are multiple properties on one entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'} that could be matched with the properties on the other entity type - {'AssignedByNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:53:10.443 -05:00 [DBG] No relationship from 'UserRole' to 'User' has been configured by convention because there are multiple properties on one entity type - {'AssignedByNavigation', 'User'} that could be matched with the properties on the other entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:53:10.447 -05:00 [DBG] No relationship from 'User' to 'UserRole' has been configured by convention because there are multiple properties on one entity type - {'UserRoleAssignedByNavigations', 'UserRoleUsers'} that could be matched with the properties on the other entity type - {'AssignedByNavigation', 'User'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-05-26 10:53:10.485 -05:00 [DBG] The index {'UserId'} was not created on entity type 'Friend' as the properties are already covered by the index {'UserId', 'FriendId'}.
+2026-05-26 10:53:10.488 -05:00 [DBG] The index {'ReviewId'} was not created on entity type 'ReviewAnswer' as the properties are already covered by the index {'ReviewId', 'UserId'}.
+2026-05-26 10:53:10.491 -05:00 [DBG] The index {'RoleId'} was not created on entity type 'RolePermission' as the properties are already covered by the index {'RoleId', 'PermissionId'}.
+2026-05-26 10:53:10.493 -05:00 [DBG] The index {'UserId'} was not created on entity type 'UserRole' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-05-26 10:53:10.845 -05:00 [DBG] Entity Framework Core 9.0.14 initialized 'SteamContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.14' with options: EngineType=SqlServer 
+2026-05-26 10:53:10.921 -05:00 [DBG] Compiling query expression: 
+'DbSet<EmailTemplate>()'
+2026-05-26 10:53:11.189 -05:00 [DBG] Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<EmailTemplate>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: EmailTemplate.Body (string) Required, 0], [Property: EmailTemplate.CreatedAt (DateTime) Required ValueGenerated.OnAdd, 1], [Property: EmailTemplate.EmailTemplateId (int) Required ValueGenerated.OnAdd, 2], [Property: EmailTemplate.Name (string) Required MaxLength(100) ANSI, 3], [Property: EmailTemplate.Subject (string) Required MaxLength(255) ANSI, 4] }
+        SELECT e.Body, e.CreatedAt, e.EmailTemplateId, e.Name, e.Subject
+        FROM EmailTemplates AS e) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: EmailTemplate.Body (string) Required, 0], [Property: EmailTemplate.CreatedAt (DateTime) Required ValueGenerated.OnAdd, 1], [Property: EmailTemplate.EmailTemplateId (int) Required ValueGenerated.OnAdd, 2], [Property: EmailTemplate.Name (string) Required MaxLength(100) ANSI, 3], [Property: EmailTemplate.Subject (string) Required MaxLength(255) ANSI, 4] }
+        SELECT e.Body, e.CreatedAt, e.EmailTemplateId, e.Name, e.Subject
+        FROM EmailTemplates AS e, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        EmailTemplate entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            EmailTemplate instance1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(EmailTemplate);
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: EmailTemplate Keyless | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.EmailTemplate")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: EmailTemplate Keyless | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.EmailTemplate")]: 
+                        {
+                            return 
+                            {
+                                EmailTemplate instance;
+                                instance = new EmailTemplate();
+                                instance.<Body>k__BackingField = dataReader.GetString(0);
+                                instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(1);
+                                instance.<EmailTemplateId>k__BackingField = dataReader.GetInt32(2);
+                                instance.<Name>k__BackingField = dataReader.GetString(3);
+                                instance.<Subject>k__BackingField = dataReader.GetString(4);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: EmailTemplate Keyless | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.EmailTemplate")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(EmailTemplate)
+                }
+                ;
+                return instance1;
+            }return instance1;
+        };
+        return entity;
+    }, 
+    contextType: SteamDomain.Database.SqlServer.Context.SteamContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2026-05-26 10:53:11.233 -05:00 [DBG] Creating DbConnection.
+2026-05-26 10:53:11.285 -05:00 [DBG] Created DbConnection. (52ms).
+2026-05-26 10:53:11.295 -05:00 [DBG] Opening connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.097 -05:00 [DBG] Opened connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.107 -05:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-05-26 10:53:12.118 -05:00 [DBG] Created DbCommand for 'ExecuteReader' (10ms).
+2026-05-26 10:53:12.122 -05:00 [DBG] Initialized DbCommand for 'ExecuteReader' (19ms).
+2026-05-26 10:53:12.135 -05:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Body], [e].[CreatedAt], [e].[EmailTemplateId], [e].[Name], [e].[Subject]
+FROM [EmailTemplates] AS [e]
+2026-05-26 10:53:12.238 -05:00 [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Body], [e].[CreatedAt], [e].[EmailTemplateId], [e].[Name], [e].[Subject]
+FROM [EmailTemplates] AS [e]
+2026-05-26 10:53:12.267 -05:00 [DBG] Closing data reader to 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.276 -05:00 [DBG] A data reader for 'STEAM' on server 'localhost,1433' is being disposed after spending 28ms reading results.
+2026-05-26 10:53:12.281 -05:00 [DBG] Closing connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.289 -05:00 [DBG] Closed connection to database 'STEAM' on server 'localhost,1433' (7ms).
+2026-05-26 10:53:12.310 -05:00 [DBG] Compiling query expression: 
+'DbSet<Status>()
+    .FirstOrDefault(x => x.StatusId == __requiredStatus_Id_0)'
+2026-05-26 10:53:12.391 -05:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Status>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<Status>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Status.StatusId (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Status.Code (string) Required MaxLength(20), 1], [Property: Status.CreatedAt (DateTime) Required ValueGenerated.OnAdd, 2], [Property: Status.ShowName (string) Required MaxLength(20), 3] }
+            SELECT TOP(1) s.StatusID, s.Code, s.CreatedAt, s.ShowName
+            FROM Status AS s
+            WHERE s.StatusID == @__requiredStatus_Id_0) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Status.StatusId (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Status.Code (string) Required MaxLength(20), 1], [Property: Status.CreatedAt (DateTime) Required ValueGenerated.OnAdd, 2], [Property: Status.ShowName (string) Required MaxLength(20), 3] }
+            SELECT TOP(1) s.StatusID, s.Code, s.CreatedAt, s.ShowName
+            FROM Status AS s
+            WHERE s.StatusID == @__requiredStatus_Id_0, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            Status entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                Status instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(Status);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: Status.StatusId PK | Resolver: c => c.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.Status").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (Status)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: Status | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.Status")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: Status | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.Status")]: 
+                            {
+                                return 
+                                {
+                                    Status instance;
+                                    instance = new Status();
+                                    instance.<StatusId>k__BackingField = dataReader.GetInt32(0);
+                                    instance.<Code>k__BackingField = dataReader.GetString(1);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(2);
+                                    instance.<ShowName>k__BackingField = dataReader.GetString(3);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: Status | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.Status")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(Status)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: SteamDomain.Database.SqlServer.Context.SteamContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-05-26 10:53:12.404 -05:00 [DBG] Opening connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.407 -05:00 [DBG] Opened connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.410 -05:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-05-26 10:53:12.411 -05:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-05-26 10:53:12.415 -05:00 [DBG] Initialized DbCommand for 'ExecuteReader' (5ms).
+2026-05-26 10:53:12.421 -05:00 [DBG] Executing DbCommand [Parameters=[@__requiredStatus_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[StatusID], [s].[Code], [s].[CreatedAt], [s].[ShowName]
+FROM [Status] AS [s]
+WHERE [s].[StatusID] = @__requiredStatus_Id_0
+2026-05-26 10:53:12.481 -05:00 [INF] Executed DbCommand (64ms) [Parameters=[@__requiredStatus_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[StatusID], [s].[Code], [s].[CreatedAt], [s].[ShowName]
+FROM [Status] AS [s]
+WHERE [s].[StatusID] = @__requiredStatus_Id_0
+2026-05-26 10:53:12.523 -05:00 [DBG] Context 'SteamContext' started tracking 'Status' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-05-26 10:53:12.549 -05:00 [DBG] Closing data reader to 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.553 -05:00 [DBG] A data reader for 'STEAM' on server 'localhost,1433' is being disposed after spending 68ms reading results.
+2026-05-26 10:53:12.557 -05:00 [DBG] Closing connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.559 -05:00 [DBG] Closed connection to database 'STEAM' on server 'localhost,1433' (2ms).
+2026-05-26 10:53:12.566 -05:00 [DBG] Opening connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.568 -05:00 [DBG] Opened connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.571 -05:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-05-26 10:53:12.573 -05:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-05-26 10:53:12.575 -05:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2026-05-26 10:53:12.577 -05:00 [DBG] Executing DbCommand [Parameters=[@__requiredStatus_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[StatusID], [s].[Code], [s].[CreatedAt], [s].[ShowName]
+FROM [Status] AS [s]
+WHERE [s].[StatusID] = @__requiredStatus_Id_0
+2026-05-26 10:53:12.584 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__requiredStatus_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[StatusID], [s].[Code], [s].[CreatedAt], [s].[ShowName]
+FROM [Status] AS [s]
+WHERE [s].[StatusID] = @__requiredStatus_Id_0
+2026-05-26 10:53:12.588 -05:00 [DBG] Context 'SteamContext' started tracking 'Status' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-05-26 10:53:12.591 -05:00 [DBG] Closing data reader to 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.593 -05:00 [DBG] A data reader for 'STEAM' on server 'localhost,1433' is being disposed after spending 5ms reading results.
+2026-05-26 10:53:12.595 -05:00 [DBG] Closing connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.598 -05:00 [DBG] Closed connection to database 'STEAM' on server 'localhost,1433' (2ms).
+2026-05-26 10:53:12.604 -05:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Where(user => user.StatusId == null || user.DeletedAt == null && user.StatusId != (int?)1 || user.DeletedAt != null && user.StatusId != (int?)0)'
+2026-05-26 10:53:12.621 -05:00 [DBG] Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<User>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.UserId (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.CreatedAt (DateTime?) ValueGenerated.OnAdd, 1], [Property: User.DeletedAt (DateTime?), 2], [Property: User.Email (string) Index MaxLength(150), 3], [Property: User.Password (string) MaxLength(255), 4], [Property: User.StatusId (int?) FK Index, 5], [Property: User.UpdateAt (DateTime?), 6], [Property: User.UserName (string) Required MaxLength(100), 7] }
+        SELECT u.UserID, u.CreatedAt, u.DeletedAt, u.Email, u.Password, u.StatusID, u.UpdateAt, u.UserName
+        FROM Users AS u
+        WHERE ((u.StatusID == NULL) || ((u.DeletedAt == NULL) && (u.StatusID != 1))) || ((u.DeletedAt != NULL) && (u.StatusID != 0))) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.UserId (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.CreatedAt (DateTime?) ValueGenerated.OnAdd, 1], [Property: User.DeletedAt (DateTime?), 2], [Property: User.Email (string) Index MaxLength(150), 3], [Property: User.Password (string) MaxLength(255), 4], [Property: User.StatusId (int?) FK Index, 5], [Property: User.UpdateAt (DateTime?), 6], [Property: User.UserName (string) Required MaxLength(100), 7] }
+        SELECT u.UserID, u.CreatedAt, u.DeletedAt, u.Email, u.Password, u.StatusID, u.UpdateAt, u.UserName
+        FROM Users AS u
+        WHERE ((u.StatusID == NULL) || ((u.DeletedAt == NULL) && (u.StatusID != 1))) || ((u.DeletedAt != NULL) && (u.StatusID != 0)), 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        User entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            User instance1;
+            InternalEntityEntry entry1;
+            bool hasNullKey1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(User);
+            entry1 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: User.UserId PK | Resolver: c => c.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.User").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetGuid(0) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey1);
+            !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+            {
+                entityType1 = entry1.EntityType;
+                return instance1 = (User)entry1.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.User")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.User")]: 
+                        {
+                            return 
+                            {
+                                User instance;
+                                instance = new User();
+                                instance.<UserId>k__BackingField = dataReader.GetGuid(0);
+                                instance.<CreatedAt>k__BackingField = dataReader.IsDBNull(1) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(1);
+                                instance.<DeletedAt>k__BackingField = dataReader.IsDBNull(2) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(2);
+                                instance.<Email>k__BackingField = dataReader.IsDBNull(3) ? default(string) : dataReader.GetString(3);
+                                instance.<Password>k__BackingField = dataReader.IsDBNull(4) ? default(string) : dataReader.GetString(4);
+                                instance.<StatusId>k__BackingField = dataReader.IsDBNull(5) ? default(int?) : (int?)dataReader.GetInt32(5);
+                                instance.<UpdateAt>k__BackingField = dataReader.IsDBNull(6) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(6);
+                                instance.<UserName>k__BackingField = dataReader.GetString(7);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("SteamDomain.Database.SqlServer.Entities.User")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(User)
+                }
+                ;
+                entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType1, 
+                    entity: instance1, 
+                    snapshot: shadowSnapshot1);
+                return instance1;
+            } : default(void);
+            return instance1;
+        };
+        return entity;
+    }, 
+    contextType: SteamDomain.Database.SqlServer.Context.SteamContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2026-05-26 10:53:12.632 -05:00 [DBG] Opening connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.634 -05:00 [DBG] Opened connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.636 -05:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-05-26 10:53:12.637 -05:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-05-26 10:53:12.639 -05:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2026-05-26 10:53:12.641 -05:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserID], [u].[CreatedAt], [u].[DeletedAt], [u].[Email], [u].[Password], [u].[StatusID], [u].[UpdateAt], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[StatusID] IS NULL OR ([u].[DeletedAt] IS NULL AND [u].[StatusID] <> 1) OR ([u].[DeletedAt] IS NOT NULL AND [u].[StatusID] <> 0)
+2026-05-26 10:53:12.671 -05:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserID], [u].[CreatedAt], [u].[DeletedAt], [u].[Email], [u].[Password], [u].[StatusID], [u].[UpdateAt], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[StatusID] IS NULL OR ([u].[DeletedAt] IS NULL AND [u].[StatusID] <> 1) OR ([u].[DeletedAt] IS NOT NULL AND [u].[StatusID] <> 0)
+2026-05-26 10:53:12.675 -05:00 [DBG] Closing data reader to 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.677 -05:00 [DBG] A data reader for 'STEAM' on server 'localhost,1433' is being disposed after spending 2ms reading results.
+2026-05-26 10:53:12.679 -05:00 [DBG] Closing connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.682 -05:00 [DBG] Closed connection to database 'STEAM' on server 'localhost,1433' (2ms).
+2026-05-26 10:53:12.686 -05:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Any()'
+2026-05-26 10:53:12.694 -05:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<bool>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u), 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            bool? value1;
+            value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+            return (bool)value1;
+        }, 
+        contextType: SteamDomain.Database.SqlServer.Context.SteamContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-05-26 10:53:12.709 -05:00 [DBG] Opening connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.711 -05:00 [DBG] Opened connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.713 -05:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-05-26 10:53:12.715 -05:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-05-26 10:53:12.717 -05:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2026-05-26 10:53:12.718 -05:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-26 10:53:12.733 -05:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-26 10:53:12.739 -05:00 [DBG] Closing data reader to 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.741 -05:00 [DBG] A data reader for 'STEAM' on server 'localhost,1433' is being disposed after spending 3ms reading results.
+2026-05-26 10:53:12.743 -05:00 [DBG] Closing connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.745 -05:00 [DBG] Closed connection to database 'STEAM' on server 'localhost,1433' (2ms).
+2026-05-26 10:53:12.749 -05:00 [DBG] 'SteamContext' disposed.
+2026-05-26 10:53:12.753 -05:00 [DBG] Disposing connection to database 'STEAM' on server 'localhost,1433'.
+2026-05-26 10:53:12.756 -05:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2026-05-26 10:53:12.902 -05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-05-26 10:53:13.065 -05:00 [DBG] Hosting starting
+2026-05-26 10:53:13.134 -05:00 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-26 10:53:13.155 -05:00 [DBG] Reading data from file 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys\key-eb52c935-72b0-4d67-ad2d-5cfd3eb9c992.xml'.
+2026-05-26 10:53:13.167 -05:00 [DBG] Found key {eb52c935-72b0-4d67-ad2d-5cfd3eb9c992}.
+2026-05-26 10:53:13.186 -05:00 [DBG] Considering key {eb52c935-72b0-4d67-ad2d-5cfd3eb9c992} with expiration date 2026-07-07 03:27:01Z as default key.
+2026-05-26 10:53:13.192 -05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-05-26 10:53:13.195 -05:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-05-26 10:53:13.199 -05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-05-26 10:53:13.205 -05:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-05-26 10:53:13.209 -05:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-05-26 10:53:13.214 -05:00 [DBG] Using key {eb52c935-72b0-4d67-ad2d-5cfd3eb9c992} as the default key.
+2026-05-26 10:53:13.218 -05:00 [DBG] Key ring with default key {eb52c935-72b0-4d67-ad2d-5cfd3eb9c992} was loaded during application startup.
+2026-05-26 10:53:13.233 -05:00 [DBG] Middleware loaded
+2026-05-26 10:53:13.237 -05:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14931 B).
+2026-05-26 10:53:13.240 -05:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-05-26 10:53:13.428 -05:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-05-26 10:53:13.434 -05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-05-26 10:53:13.461 -05:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-05-26 10:53:13.553 -05:00 [INF] Now listening on: http://localhost:5168
+2026-05-26 10:53:13.555 -05:00 [DBG] Loaded hosting startup assembly Steam.Web.Api
+2026-05-26 10:53:13.557 -05:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-05-26 10:53:13.558 -05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-05-26 10:53:13.559 -05:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-05-26 10:53:13.572 -05:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2026-05-26 10:53:13.575 -05:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2026-05-26 10:53:13.646 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-26 10:53:13.648 -05:00 [INF] Hosting environment: Development
+2026-05-26 10:53:13.649 -05:00 [INF] Content root path: C:\Users\Asus\OneDrive\Documentos\BOOTCAMP\PROYECTOFINAL\BackEnd\Steam-Clone\Steam_Backend\Steam.Web.Api
+2026-05-26 10:53:13.651 -05:00 [DBG] Hosting started
+2026-05-26 10:53:14.017 -05:00 [DBG] Connection id "0HNLR7RIIG8AI" accepted.
+2026-05-26 10:53:14.020 -05:00 [DBG] Connection id "0HNLR7RIIG8AI" started.
+2026-05-26 10:53:14.022 -05:00 [DBG] Connection id "0HNLR7RIIG8AJ" accepted.
+2026-05-26 10:53:14.024 -05:00 [DBG] Connection id "0HNLR7RIIG8AJ" started.
+2026-05-26 10:53:14.055 -05:00 [DBG] Connection id "0HNLR7RIIG8AI" received FIN.
+2026-05-26 10:53:14.055 -05:00 [DBG] Connection id "0HNLR7RIIG8AJ" received FIN.
+2026-05-26 10:53:14.067 -05:00 [DBG] Connection id "0HNLR7RIIG8AI" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-05-26 10:53:14.067 -05:00 [DBG] Connection id "0HNLR7RIIG8AJ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-05-26 10:53:14.073 -05:00 [DBG] Connection id "0HNLR7RIIG8AI" disconnecting.
+2026-05-26 10:53:14.074 -05:00 [DBG] Connection id "0HNLR7RIIG8AJ" disconnecting.
+2026-05-26 10:53:14.095 -05:00 [DBG] Connection id "0HNLR7RIIG8AJ" stopped.
+2026-05-26 10:53:14.095 -05:00 [DBG] Connection id "0HNLR7RIIG8AI" stopped.
+2026-05-26 10:53:14.894 -05:00 [DBG] Connection id "0HNLR7RIIG8AK" accepted.
+2026-05-26 10:53:14.898 -05:00 [DBG] Connection id "0HNLR7RIIG8AK" started.
+2026-05-26 10:53:14.899 -05:00 [DBG] Connection id "0HNLR7RIIG8AL" accepted.
+2026-05-26 10:53:14.901 -05:00 [DBG] Connection id "0HNLR7RIIG8AL" started.
+2026-05-26 10:53:14.974 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5168/scalar - null null
+2026-05-26 10:53:15.329 -05:00 [DBG] 1 candidate(s) found for the request path '/scalar'
+2026-05-26 10:53:15.333 -05:00 [DBG] Endpoint 'HTTP: GET /scalar/{documentName?}' with route pattern '/scalar/{documentName?}' is valid for the request path '/scalar'
+2026-05-26 10:53:15.339 -05:00 [DBG] Request matched endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-26 10:53:15.356 -05:00 [WRN] Failed to determine the https port for redirect.
+2026-05-26 10:53:15.593 -05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-05-26 10:53:15.599 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-26 10:53:15.633 -05:00 [INF] Executing RedirectResult, redirecting to scalar/.
+2026-05-26 10:53:15.636 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-26 10:53:15.658 -05:00 [DBG] Connection id "0HNLR7RIIG8AK" completed keep alive response.
+2026-05-26 10:53:15.665 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5168/scalar - 302 null null 701.3651ms
+2026-05-26 10:53:15.679 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5168/scalar/ - null null
+2026-05-26 10:53:15.698 -05:00 [DBG] 1 candidate(s) found for the request path '/scalar/'
+2026-05-26 10:53:15.700 -05:00 [DBG] Endpoint 'HTTP: GET /scalar/{documentName?}' with route pattern '/scalar/{documentName?}' is valid for the request path '/scalar/'
+2026-05-26 10:53:15.702 -05:00 [DBG] Request matched endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-26 10:53:15.706 -05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-05-26 10:53:15.707 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-26 10:53:15.850 -05:00 [INF] Write content with HTTP Response ContentType of text/html
+2026-05-26 10:53:15.854 -05:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-05-26 10:53:15.880 -05:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-05-26 10:53:15.897 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-26 10:53:15.900 -05:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-05-26 10:53:15.902 -05:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-05-26 10:53:15.904 -05:00 [DBG] Connection id "0HNLR7RIIG8AK" completed keep alive response.
+2026-05-26 10:53:15.906 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5168/scalar/ - 200 null text/html 227.4271ms
+2026-05-26 10:53:15.986 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5168/scalar/scalar.js - null null
+2026-05-26 10:53:15.992 -05:00 [DBG] 2 candidate(s) found for the request path '/scalar/scalar.js'
+2026-05-26 10:53:15.994 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5168/scalar/scalar.aspnetcore.js - null null
+2026-05-26 10:53:15.996 -05:00 [DBG] Endpoint 'HTTP: GET /scalar/scalar.js' with route pattern '/scalar/scalar.js' is valid for the request path '/scalar/scalar.js'
+2026-05-26 10:53:15.999 -05:00 [DBG] Connection id "0HNLR7RIIG8AM" accepted.
+2026-05-26 10:53:16.000 -05:00 [DBG] 2 candidate(s) found for the request path '/scalar/scalar.aspnetcore.js'
+2026-05-26 10:53:16.001 -05:00 [DBG] Endpoint 'HTTP: GET /scalar/{documentName?}' with route pattern '/scalar/{documentName?}' is valid for the request path '/scalar/scalar.js'
+2026-05-26 10:53:16.004 -05:00 [DBG] Connection id "0HNLR7RIIG8AM" started.
+2026-05-26 10:53:16.005 -05:00 [DBG] Endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js' with route pattern '/scalar/scalar.aspnetcore.js' is valid for the request path '/scalar/scalar.aspnetcore.js'
+2026-05-26 10:53:16.007 -05:00 [DBG] Request matched endpoint 'HTTP: GET /scalar/scalar.js'
+2026-05-26 10:53:16.009 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5168/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-26 10:53:16.011 -05:00 [DBG] Endpoint 'HTTP: GET /scalar/{documentName?}' with route pattern '/scalar/{documentName?}' is valid for the request path '/scalar/scalar.aspnetcore.js'
+2026-05-26 10:53:16.016 -05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-05-26 10:53:16.017 -05:00 [DBG] Request matched endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-05-26 10:53:16.019 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-05-26 10:53:16.019 -05:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-05-26 10:53:16.021 -05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-05-26 10:53:16.023 -05:00 [DBG] Connection id "0HNLR7RIIG8AM" completed keep alive response.
+2026-05-26 10:53:16.026 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-05-26 10:53:16.028 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5168/_framework/aspnetcore-browser-refresh.js - 200 14931 application/javascript; charset=utf-8 19.0284ms
+2026-05-26 10:53:16.062 -05:00 [INF] Sending file with download name ''.
+2026-05-26 10:53:16.062 -05:00 [INF] Sending file with download name ''.
+2026-05-26 10:53:16.068 -05:00 [DBG] The file result has not been enabled for processing range requests. To enable it, set the EnableRangeProcessing property on the result to 'true'.
+2026-05-26 10:53:16.068 -05:00 [DBG] The file result has not been enabled for processing range requests. To enable it, set the EnableRangeProcessing property on the result to 'true'.
+2026-05-26 10:53:16.072 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-05-26 10:53:16.075 -05:00 [DBG] Connection id "0HNLR7RIIG8AL" completed keep alive response.
+2026-05-26 10:53:16.078 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5168/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 83.9185ms
+2026-05-26 10:53:16.133 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5168/_vs/browserLink - null null
+2026-05-26 10:53:16.163 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-05-26 10:53:16.171 -05:00 [DBG] Connection id "0HNLR7RIIG8AK" completed keep alive response.
+2026-05-26 10:53:16.175 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5168/scalar/scalar.js - 200 1110236 text/javascript 188.9152ms
+2026-05-26 10:53:16.301 -05:00 [DBG] Connection id "0HNLR7RIIG8AL" completed keep alive response.
+2026-05-26 10:53:16.303 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 170.4544ms
+2026-05-26 10:53:16.929 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5168/openapi/v1.json - null null
+2026-05-26 10:53:16.933 -05:00 [DBG] 1 candidate(s) found for the request path '/openapi/v1.json'
+2026-05-26 10:53:16.936 -05:00 [DBG] Endpoint 'HTTP: GET /openapi/{documentName}.json' with route pattern '/openapi/{documentName}.json' is valid for the request path '/openapi/v1.json'
+2026-05-26 10:53:16.937 -05:00 [DBG] Request matched endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-05-26 10:53:16.940 -05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-05-26 10:53:16.942 -05:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-05-26 10:53:17.401 -05:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-05-26 10:53:17.403 -05:00 [DBG] Connection id "0HNLR7RIIG8AL" completed keep alive response.
+2026-05-26 10:53:17.404 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5168/openapi/v1.json - 200 null application/json;charset=utf-8 475.3325ms
+2026-05-26 10:53:18.262 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5168/scalar/favicon.svg - null null
+2026-05-26 10:53:18.270 -05:00 [DBG] 2 candidate(s) found for the request path '/scalar/favicon.svg'
+2026-05-26 10:53:18.272 -05:00 [DBG] Endpoint 'HTTP: GET /scalar/favicon.svg' with route pattern '/scalar/favicon.svg' is valid for the request path '/scalar/favicon.svg'
+2026-05-26 10:53:18.273 -05:00 [DBG] Endpoint 'HTTP: GET /scalar/{documentName?}' with route pattern '/scalar/{documentName?}' is valid for the request path '/scalar/favicon.svg'
+2026-05-26 10:53:18.275 -05:00 [DBG] Request matched endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-05-26 10:53:18.278 -05:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-05-26 10:53:18.282 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-05-26 10:53:18.287 -05:00 [INF] Sending file with download name ''.
+2026-05-26 10:53:18.289 -05:00 [DBG] The file result has not been enabled for processing range requests. To enable it, set the EnableRangeProcessing property on the result to 'true'.
+2026-05-26 10:53:18.291 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-05-26 10:53:18.293 -05:00 [DBG] Connection id "0HNLR7RIIG8AL" completed keep alive response.
+2026-05-26 10:53:18.295 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5168/scalar/favicon.svg - 200 533 image/svg+xml 33.217ms

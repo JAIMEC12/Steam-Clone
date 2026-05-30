@@ -1,45 +1,103 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Steam.Web.Api.Helper;
 using SteamApplication.Interfaces.Servicie;
+using SteamApplication.Models.Dtos;
 using SteamApplication.Models.Request.Users;
-
+using SteamApplication.Models.Response;
+using SteamShared.Constants;
 
 namespace Steam.Web.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController(IUserService service) : ControllerBase
+    public class UserController(IUserService userService) : ControllerBase
     {
-        private readonly IUserService _service = service;
-
+        // ✅ CREAR USUARIO SIN TOKEN
         [HttpPost]
-        public IActionResult Create([FromBody] CreateUsersRequest model)
+        [AllowAnonymous]
+        [EndpointSummary("Crear usuario")]
+        [EndpointDescription("Crea un usuario con StatusId = 1 (Activo).")]
+        [ProducesResponseType(typeof(GenericResponse<UserDto>), StatusCodes.Status201Created)]
+        public async Task<GenericResponse<UserDto>> Create([FromBody] CreateUsersRequest model)
         {
-            var rsp = _service.CreateUser(model);
-            return Ok(rsp);
+            var srv = await userService.Create(model);
+            return ResponseStatus.Created(HttpContext, srv);
         }
 
+        // ✅ OBTENER TODOS (PROTEGIDO)
         [HttpGet]
-        public IActionResult GetAll()
+        [Authorize(Policy = PermissionConstants.USERS_READ)]
+        [ProducesResponseType(typeof(GenericResponse<List<UserDto>>), StatusCodes.Status200OK)]
+        public async Task<GenericResponse<List<UserDto>>> GetAll([FromQuery] FilterUserRequest model)
         {
-            return Ok(_service.GetAllUsers());
+            var srv = userService.Get(model);
+            return ResponseStatus.Ok(HttpContext, srv);
         }
 
+        // ✅ OBTENER POR ID
         [HttpGet("{id:guid}")]
-        public IActionResult GetById(Guid id)
+        [Authorize]
+        [ProducesResponseType(typeof(GenericResponse<UserDto>), StatusCodes.Status200OK)]
+        public async Task<GenericResponse<UserDto>> GetById(Guid id)
         {
-            return Ok(_service.GetUserById(id));
+            var currentUserId = GetUserId();
+            if (id != currentUserId && !CurrentUserHelper.HasPermission(User, PermissionConstants.USERS_READ))
+            {
+                throw new UnauthorizedAccessException(ResponseConstants.AUTH_CLAIM_USER_NOT_FOUND);
+            }
+
+            var srv = await userService.Get(id);
+            return ResponseStatus.Ok(HttpContext, srv);
         }
 
+        // ✅ USUARIO ACTUAL (TOKEN)
+        [HttpGet("me")]
+        [Authorize]
+        [ProducesResponseType(typeof(GenericResponse<UserDto>), StatusCodes.Status200OK)]
+        public async Task<GenericResponse<UserDto>> Me()
+        {
+            var userId = GetUserId();
+            var srv = await userService.Me(userId);
+            return ResponseStatus.Ok(HttpContext, srv);
+        }
+
+        // ✅ ACTUALIZAR
         [HttpPut("{id:guid}")]
-        public IActionResult Update(Guid id, [FromBody] UpdateUserRequest model)
+        [Authorize]
+        [ProducesResponseType(typeof(GenericResponse<UserDto>), StatusCodes.Status200OK)]
+        public async Task<GenericResponse<UserDto>> Update([FromBody] UpdateUserRequest model, Guid id)
         {
-            return Ok(_service.UpdateUser(id, model));
+            var userId = GetUserId();
+            if (id != userId && !CurrentUserHelper.HasPermission(User, PermissionConstants.USERS_MANAGE))
+            {
+                throw new UnauthorizedAccessException(ResponseConstants.AUTH_CLAIM_USER_NOT_FOUND);
+            }
+
+            var srv = await userService.Update(id, model, userId);
+            return ResponseStatus.Updated(HttpContext, srv);
         }
 
+        // ✅ ELIMINAR
         [HttpDelete("{id:guid}")]
-        public IActionResult Delete(Guid id)
+        [Authorize]
+        [ProducesResponseType(typeof(GenericResponse<bool>), StatusCodes.Status200OK)]
+        public async Task<GenericResponse<bool>> Delete(Guid id)
         {
-            return Ok(_service.DeleteUser(id));
+            var userId = GetUserId();
+            if (id != userId && !CurrentUserHelper.HasPermission(User, PermissionConstants.USERS_MANAGE))
+            {
+                throw new UnauthorizedAccessException(ResponseConstants.AUTH_CLAIM_USER_NOT_FOUND);
+            }
+
+            var srv = await userService.Delete(id);
+            return ResponseStatus.Ok(HttpContext, srv);
+        }
+
+        // 🔐 MEJOR IMPLEMENTACIÓN DEL CLAIM
+        private Guid GetUserId()
+        {
+            return CurrentUserHelper.GetRequiredUserId(User);
         }
     }
 }

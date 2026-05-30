@@ -4,15 +4,22 @@ namespace SteamApplication.Helpers
 {
     public static class ResponseHelper
     {
-        public static GenericResponse<T> Ok<T>(T data, string message = "OK")
+        public static GenericResponse<T> Create<T>(T data, List<string>? errors = null, int? count = 0, string? message = null)
         {
-            return new GenericResponse<T>
+            var response = new GenericResponse<T>
             {
                 Data = data,
-                Message = message,
-                Success = true
+                Message = message ?? "Solicitud realizada correctamente",
+                Errors = errors ?? [],
+                Count = count ?? 0
             };
+
+            return response;
         }
+
+
+
+
 
         public static GenericResponse<T> Fail<T>(string message)
         {
